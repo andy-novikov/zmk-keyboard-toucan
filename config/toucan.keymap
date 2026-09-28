@@ -2,10 +2,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#include <dt-bindings/zmk/outputs.h>
+
 #define BASE 0
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+#define CDY  4
 
 / {
     conditional_layers {
@@ -59,7 +62,7 @@
         nav {
             display-name = "NAV";
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &kp LSHFT  &studio_unlock  &trans  &trans  &trans  &sl 7  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
+&kp TAB  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp BSPC  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &kp LSHFT  &studio_unlock  &trans  &trans  &trans  &sl CDY  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -77,16 +80,17 @@
             >;
         };
 
+        base-cdy {
+            display-name = "CDY";
+            bindings = <
+&trans  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  &trans  &hml LEFT_ALT A  &hml LGUI S  &hml LCTRL D  &hml LSHFT F  &kp G  &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RIGHT_GUI L  &hmr RIGHT_ALT SQT  &trans  &trans  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  &kp ESC  &kp SPACE  &kp TAB  &kp RET  &kp BSPC  &kp F13
+            >;
+        };
+
         extra_1 { status = "reserved"; };
 
         extra_2 { status = "reserved"; };
 
         extra_3 { status = "reserved"; };
-
-        base-cdy {
-            bindings = <
-&trans  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  &trans  &hml LEFT_ALT A  &hml LGUI S  &hml LCTRL D  &hml LSHFT F  &kp G  &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr RIGHT_GUI L  &hmr RIGHT_ALT SQT  &trans  &trans  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  &kp ESC  &kp SPACE  &kp TAB  &kp RET  &kp BSPC  &kp F13
-            >;
-        };
     };
 };
